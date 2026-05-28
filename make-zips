@@ -5,7 +5,10 @@ rm -rf build
 mkdir build
 
 cd src
-zip -r ../build/zotcardx-3.4.0.xpi *
+version="$(jq -r '.version' manifest.json)"
+package="zotcardx-${version}.xpi"
+zip -r "../build/${package}" *
 cd ../build
 
-jq ".addons[\"zotcard@zotero.org\"].updates[0].update_hash = \"sha256:`shasum -a 256 zotcardx-3.4.0.xpi | cut -d' ' -f1`\"" ../updates.json.tmpl > ../updates.json
+hash="$(shasum -a 256 "${package}" | cut -d' ' -f1)"
+jq --arg hash "sha256:${hash}" '.addons["zotcard@zotero.org"].updates[0].update_hash = $hash' ../updates.json.tmpl > ../updates.json
