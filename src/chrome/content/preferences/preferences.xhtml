@@ -1,0 +1,27 @@
+<vbox id="zotero-zotcard-prefpane" onload="Zotero.ZotCard.Preferences.init()">
+	<groupbox class="main-section">
+		<html:p data-l10n-id="zotero-zotcard-preferences-about-introduce"></html:p>
+		
+		<hbox class="zotcard-pref-button-row">
+			<button data-l10n-id="zotero-zotcard-preferences-more" oncommand="Zotero.openInViewer('chrome://zotcard/content/preferences/zotcard-preferences.html');"></button>
+		</hbox>
+
+		<hbox class="zotcard-pref-button-row" style="margin-top: 8px; gap: 6px;">
+			<button data-l10n-id="zotero-zotcard-preferences-backup" oncommand="Zotero.ZotCard.Preferences.backup();"></button>
+			<button data-l10n-id="zotero-zotcard-preferences-restore" oncommand="Zotero.ZotCard.Preferences.restore();"></button>
+			<button data-l10n-id="zotero-zotcard-preferences-reset" oncommand="Zotero.ZotCard.Preferences.reset();"></button>
+		</hbox>
+	</groupbox>
+
+	<groupbox class="main-section">
+		<label>
+			<html:h2 data-l10n-id="zotero-zotcard-preferences-site" />
+		</label>
+
+		<html:div>
+			<p><html:a href="javascript:void(0)" onclick="Zotero.launchURL('https://github.com/Oz/zotcardx')" target="_blank">https://github.com/Oz/zotcardx</html:a></p>
+			<html:img src="https://img.shields.io/github/stars/Oz/zotcardx?label=Stars"></html:img>　
+			<html:img src="https://img.shields.io/github/downloads/Oz/zotcardx/total?label=Downloads"></html:img>
+		</html:div>
+	</groupbox>
+</vbox>
