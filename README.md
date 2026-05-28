@@ -89,7 +89,7 @@ Welcome to come here to find and share your card template: [Visit](https://githu
 
 If ZotcardX is useful to you, you can buy me a coffee to support maintenance.
 
-<img src="src/chrome/content/images/wechat-alipay.png" width="300" />
+<img src="src/chrome/content/images/wechat-alipay.svg" width="300" />
 
 ## Acknowledgements
 

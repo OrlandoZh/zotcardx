@@ -87,7 +87,7 @@ ZotcardX 给你提供更多的自定义卡片空间，但需要你懂一点点[H
 
 如果 ZotcardX 对你有帮助，可以请我喝杯咖啡支持维护。
 
-<img src="src/chrome/content/images/wechat-alipay.png" width="300" />
+<img src="src/chrome/content/images/wechat-alipay.svg" width="300" />
 
 ## 致谢
 
