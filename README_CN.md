@@ -3,7 +3,7 @@
 </p>
 <p align="center">
   <a href="https://www.zotero.org">
-    <img src="https://img.shields.io/badge/Zotero-7-red" alt="Zotero-7">
+    <img src="https://img.shields.io/badge/Zotero-9-red" alt="Zotero-9">
   </a>
   <a href="https://github.com/OrlandoZh/zotcardx/stargazers">
     <img src="https://img.shields.io/github/stars/OrlandoZh/zotcardx?label=Stars" alt="Stars">
