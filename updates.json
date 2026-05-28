@@ -4,8 +4,8 @@
       "updates": [
         {
           "version": "3.4.0",
-          "update_link": "https://github.com/Oz/zotcardx/releases/latest/download/zotcardx-3.4.0.xpi",
-          "update_hash": "sha256:197ed62e3609ee33a606e05da82ee28d18cb34972f3b240829a3abef5b9db191",
+          "update_link": "https://github.com/OrlandoZh/zotcardx/releases/latest/download/zotcardx-3.4.0.xpi",
+          "update_hash": "sha256:e3e2002df6540a36c44b4c846dbf62fa2c9c6e3dad60df9a4b4581d0180a3f82",
           "applications": {
             "zotero": {
               "strict_min_version": "6.999"

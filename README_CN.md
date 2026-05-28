@@ -5,11 +5,11 @@
   <a href="https://www.zotero.org">
     <img src="https://img.shields.io/badge/Zotero-7-red" alt="Zotero-7">
   </a>
-  <a href="https://github.com/Oz/zotcardx/stargazers">
-    <img src="https://img.shields.io/github/stars/Oz/zotcardx?label=Stars" alt="Stars">
+  <a href="https://github.com/OrlandoZh/zotcardx/stargazers">
+    <img src="https://img.shields.io/github/stars/OrlandoZh/zotcardx?label=Stars" alt="Stars">
   </a>
-  <a href="https://github.com/Oz/zotcardx/releases">
-    <img src="https://img.shields.io/github/downloads/Oz/zotcardx/total?label=Downloads" alt="Downloads">
+  <a href="https://github.com/OrlandoZh/zotcardx/releases">
+    <img src="https://img.shields.io/github/downloads/OrlandoZh/zotcardx/total?label=Downloads" alt="Downloads">
   </a>
 </p>
 
@@ -19,7 +19,7 @@
 ZotcardX 是基于原版 Zotcard、面向 Zotero 最新版本持续维护的版本。它是 Zotero 的一个插件，也是卡片法笔记的提效工具，提供卡片模版（如默认有概念卡、人物卡、金句卡等，支持自定义其他卡片模版），可以让你快速写卡。除此之外，还帮助你卡片分类以及统一卡片的标准格式。
 
 ## 快速开始
-- 第一步、下载 ZotcardX 最新版本：[点击下载](https://github.com/Oz/zotcardx/releases)；
+- 第一步、下载 ZotcardX 最新版本：[点击下载](https://github.com/OrlandoZh/zotcardx/releases)；
 
 - 第二步、Zotero - 工具 - 附加组件 - ⚙️ - Install Add-on From File...，选择插件xpi文件；
 
@@ -81,7 +81,7 @@ ZotcardX 给你提供更多的自定义卡片空间，但需要你懂一点点[H
 <p>- <strong>日期</strong>：{today}</p>
 ```
 
-欢迎来这里寻找和分享你的卡片模版：[访问](https://github.com/Oz/zotcardx/discussions)。
+欢迎来这里寻找和分享你的卡片模版：[访问](https://github.com/OrlandoZh/zotcardx/discussions)。
 
 ## 致谢
 

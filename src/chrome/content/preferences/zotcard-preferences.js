@@ -228,7 +228,7 @@ window.onload = function() {
 			}
 
 			const handleToRSS = () => {
-				Zotero.launchURL('https://github.com/Oz/zotcardx/discussions');
+				Zotero.launchURL('https://github.com/OrlandoZh/zotcardx/discussions');
 			}
 
 			const handleStyles = async (type, param) => {

@@ -3,7 +3,7 @@
 	"name": "ZotcardX",
 	"version": "3.4.0",
 	"description": "Writing card is more smooth, reading card is more smooth.",
-	"homepage_url": "https://github.com/Oz/zotcardx",
+	"homepage_url": "https://github.com/OrlandoZh/zotcardx",
 	"author": "Oz",
 	"icons": {
 		"48": "chrome/content/images/zotcard@0.5x.png",
@@ -12,7 +12,7 @@
 	"applications": {
 		"zotero": {
 			"id": "zotcard@zotero.org",
-			"update_url": "https://raw.githubusercontent.com/Oz/zotcardx/main/updates.json",
+			"update_url": "https://raw.githubusercontent.com/OrlandoZh/zotcardx/main/updates.json",
 			"strict_min_version": "6.999",
 			"strict_max_version": "9.*.*"
 		}

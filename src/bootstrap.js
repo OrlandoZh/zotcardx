@@ -22,7 +22,7 @@ async function startup({ id, version, rootURI }) {
 		image: 'chrome://zotcard/content/images/zotcard.png',
 		src: rootURI + 'chrome/content/preferences/preferences.xhtml',
 		scripts: [rootURI + 'chrome/content/preferences/preferences.js'],
-			helpURL: 'https://github.com/Oz/zotcardx',
+			helpURL: 'https://github.com/OrlandoZh/zotcardx',
 		});
 
 		Services.scriptloader.loadSubScript(rootURI + 'zotcard-consts.js');

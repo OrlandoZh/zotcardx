@@ -1599,7 +1599,7 @@ Zotero.ZotCard = Object.assign(Zotero.ZotCard, {
 
 	async main() {
 		// Global properties are included automatically in Zotero 7
-		var host = new URL('https://github.com/Oz/zotcardx').host;
+		var host = new URL('https://github.com/OrlandoZh/zotcardx').host;
 		Zotero.ZotCard.Logger.log(`Host is ${host}`);
 
 		// Retrieve a global pref

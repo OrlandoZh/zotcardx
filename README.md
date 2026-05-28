@@ -5,11 +5,11 @@
   <a href="https://www.zotero.org">
     <img src="https://img.shields.io/badge/Zotero-7-red" alt="Zotero-7">
   </a>
-  <a href="https://github.com/Oz/zotcardx/stargazers">
-    <img src="https://img.shields.io/github/stars/Oz/zotcardx?label=Stars" alt="Stars">
+  <a href="https://github.com/OrlandoZh/zotcardx/stargazers">
+    <img src="https://img.shields.io/github/stars/OrlandoZh/zotcardx?label=Stars" alt="Stars">
   </a>
-  <a href="https://github.com/Oz/zotcardx/releases">
-    <img src="https://img.shields.io/github/downloads/Oz/zotcardx/total?label=Downloads" alt="Downloads">
+  <a href="https://github.com/OrlandoZh/zotcardx/releases">
+    <img src="https://img.shields.io/github/downloads/OrlandoZh/zotcardx/total?label=Downloads" alt="Downloads">
   </a>
 </p>
 
@@ -21,7 +21,7 @@ ZotcardX is the maintained edition of the original Zotcard project for the lates
 
 ## Getting started
 
-- Step 1, download the latest version ZotcardX: [Download](https://github.com/Oz/zotcardx/releases);
+- Step 1, download the latest version ZotcardX: [Download](https://github.com/OrlandoZh/zotcardx/releases);
 
 - Step 2: Zotero - Tools - Add-ons - ⚙️ - Install Add-on From File... , select the plug-in xpi file;
 
@@ -83,7 +83,7 @@ The following are double plate templates:
 <p>- <strong>date</strong>：{today}</p>
 ```
 
-Welcome to come here to find and share your card template: [Visit](https://github.com/Oz/zotcardx/discussions).
+Welcome to come here to find and share your card template: [Visit](https://github.com/OrlandoZh/zotcardx/discussions).
 
 ## Acknowledgements
 
