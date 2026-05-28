@@ -85,6 +85,12 @@ The following are double plate templates:
 
 Welcome to come here to find and share your card template: [Visit](https://github.com/OrlandoZh/zotcardx/discussions).
 
+## Support
+
+If ZotcardX is useful to you, you can buy me a coffee to support maintenance.
+
+<img src="src/chrome/content/images/wechat-alipay.png" width="300" />
+
 ## Acknowledgements
 
 ZotcardX is maintained by Oz as a latest-Zotero maintenance edition based on the original [Zotcard](https://github.com/018/zotcard) project by 018. Thanks to 018 and the original contributors for the foundation and inspiration.

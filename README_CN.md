@@ -83,6 +83,12 @@ ZotcardX 给你提供更多的自定义卡片空间，但需要你懂一点点[H
 
 欢迎来这里寻找和分享你的卡片模版：[访问](https://github.com/OrlandoZh/zotcardx/discussions)。
 
+## 支持
+
+如果 ZotcardX 对你有帮助，可以请我喝杯咖啡支持维护。
+
+<img src="src/chrome/content/images/wechat-alipay.png" width="300" />
+
 ## 致谢
 
 ZotcardX 由 Oz 维护，是基于 018 的原版 [Zotcard](https://github.com/018/zotcard) 面向 Zotero 最新版本继续修复和维护的版本。感谢 018 以及原项目贡献者提供的基础和启发。

@@ -2,6 +2,7 @@ zotero-zotcard = ZotcardX
 
 zotero-zotcard-preferences-about = About
 zotero-zotcard-preferences-about-introduce = Maintained by Oz, this card note efficiency tool provides card templates (such as concept cards, character cards, anti-common sense cards, etc.), allowing you to quickly customize templates, write cards, manage cards in batches, read, delete, move, batch edit, print, and generate card reports for an overall view of your cards.
+zotero-zotcard-preferences-about-thanks = If ZotcardX is useful to you, you can buy me a coffee. Thank you!
 
 zotero-zotcard-preferences-site = Site
 
