@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "ZotcardX",
-	"version": "3.3.1",
+	"version": "3.4.0",
 	"description": "Writing card is more smooth, reading card is more smooth.",
 	"homepage_url": "https://github.com/OrlandoZh/zotcardx",
 	"author": "Oz",
@@ -14,7 +14,7 @@
 			"id": "zotcard@zotero.org",
 			"update_url": "https://raw.githubusercontent.com/OrlandoZh/zotcardx/main/updates.json",
 			"strict_min_version": "6.999",
-			"strict_max_version": "9.*.*"
+			"strict_max_version": "10.0.*"
 		}
 	}
 }

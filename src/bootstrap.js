@@ -48,6 +48,7 @@ function onMainWindowLoad({ window }) {
 }
 
 function onMainWindowUnload({ window }) {
+	if (!Zotero.ZotCard) return;
 	Zotero.ZotCard.removeFromWindow(window);
 }
 

@@ -5,7 +5,7 @@ Zotero.ZotCard.Preferences = {
 
 	init: function() {
 		try {
-			this._l10n = new Localization(["preferences.ftl", "zotcard.ftl"], true);
+			this._l10n = new Localization(["zotcard-prefpane.ftl", "zotcard.ftl"], true);
 		} catch (e) {
 			Zotero.logError("ZotcardX preferences localization failed: " + e);
 		}

@@ -25,6 +25,10 @@ Zotero.ZotCard = Object.assign(Zotero.ZotCard, {
 	},
 
 	initWindow(window) {
+		// Guard against double initialization (startup init() + onMainWindowLoad for the same window)
+		if (window.document.getElementById('zotcard-stylesheet')) {
+			return;
+		}
 		// Add a stylesheet to the main Zotero pane
 		let link1 = window.document.createElement('link');
 		link1.id = 'zotcard-stylesheet';
@@ -139,7 +143,7 @@ Zotero.ZotCard = Object.assign(Zotero.ZotCard, {
 	
 	createCollectionMenu() {
 		let allowTypes = ['library', 'collection', 'search', 'group'];
-		let type = Zotero.getMainWindow().ZoteroPane.getCollectionTreeRow().type;
+		let type = Zotero.ZotCard.Zoteros.getCollectionTreeRow()?.type;
 		Zotero.ZotCard.Logger.log(type);
 
 		let root = 'zotero-collectionmenu';
@@ -934,7 +938,7 @@ Zotero.ZotCard = Object.assign(Zotero.ZotCard, {
 	// ####### menu event #######
 
 	async newCardByPane(type, focus) {
-		let collectionID = Zotero.getMainWindow().ZoteroPane.getSelectedCollection() ? Zotero.getMainWindow().ZoteroPane.getSelectedCollection().id : undefined;
+		let collectionID = Zotero.ZotCard.Zoteros.getSelectedCollection() ? Zotero.ZotCard.Zoteros.getSelectedCollection().id : undefined;
 
 		var item;
 		var reader = Zotero.ZotCard.Readers.getSelectedReader();
@@ -957,7 +961,7 @@ Zotero.ZotCard = Object.assign(Zotero.ZotCard, {
 
 		let note = new Zotero.Item('note');
 		note.parentKey = item.getField('key');
-		note.libraryID = Zotero.getMainWindow().ZoteroPane.getSelectedLibraryID();
+		note.libraryID = Zotero.ZotCard.Zoteros.getSelectedLibraryID();
 		Zotero.ZotCard.Logger.log({collection, item, type, text});
 		let noteContent = Zotero.ZotCard.Cards.newCard(Zotero.getMainWindow(), collection, item, type, text);
 		note.setNote(noteContent || '');
@@ -995,10 +999,10 @@ Zotero.ZotCard = Object.assign(Zotero.ZotCard, {
 		// }
 		for (let index = 0; index < items.length; index++) {
 			const item = items[index];
-			let collection = Zotero.getMainWindow().ZoteroPane.getSelectedCollection();
+			let collection = Zotero.ZotCard.Zoteros.getSelectedCollection();
 			let note = new Zotero.Item('note');
 			note.parentKey = item.getField('key');
-			note.libraryID = Zotero.getMainWindow().ZoteroPane.getSelectedLibraryID();
+			note.libraryID = Zotero.ZotCard.Zoteros.getSelectedLibraryID();
 			let noteContent =  Zotero.ZotCard.Cards.newCard(Zotero.getMainWindow(), collection, item, type, undefined);
 			note.setNote(noteContent || '');
 			let itemID = await note.saveTx();
@@ -1009,12 +1013,12 @@ Zotero.ZotCard = Object.assign(Zotero.ZotCard, {
 	},
 
 	async newCardByCollection(type) {
-		let collection = Zotero.getMainWindow().ZoteroPane.getSelectedCollection();
+		let collection = Zotero.ZotCard.Zoteros.getSelectedCollection();
 		let note = new Zotero.Item('note');
 		if (collection) {
 			note.addToCollection(collection.id);
 		}
-		note.libraryID = Zotero.getMainWindow().ZoteroPane.getSelectedLibraryID();
+		note.libraryID = Zotero.ZotCard.Zoteros.getSelectedLibraryID();
 		let noteContent = await Zotero.ZotCard.Cards.newCard(Zotero.getMainWindow(), collection, undefined, type, undefined);
 		note.setNote(noteContent || '');
 		let itemID = await note.saveTx();
@@ -1026,24 +1030,24 @@ Zotero.ZotCard = Object.assign(Zotero.ZotCard, {
 	collectionCardManager() {
 		let items;
 
-		switch (Zotero.getMainWindow().ZoteroPane.getCollectionTreeRow().type) {
+		switch (Zotero.ZotCard.Zoteros.getCollectionTreeRow()?.type) {
 			case 'library':
 			case 'group':
-				let libraryID = Zotero.getMainWindow().ZoteroPane.getSelectedLibraryID();
+				let libraryID = Zotero.ZotCard.Zoteros.getSelectedLibraryID();
 				items = [{
 					type: Zotero.ZotCard.Consts.cardManagerType.library,
 					id: libraryID
 				}];
 				break;
 			case 'collection':
-				let collection = Zotero.getMainWindow().ZoteroPane.getSelectedCollection();
+				let collection = Zotero.ZotCard.Zoteros.getSelectedCollection();
 				items = [{
 					type: Zotero.ZotCard.Consts.cardManagerType.collection,
 					id: collection.id
 				}];
 				break;
 			case 'search':
-				let search = Zotero.getMainWindow().ZoteroPane.getSelectedSavedSearch();
+				let search = Zotero.ZotCard.Zoteros.getSelectedSavedSearch();
 				items = [{
 					type: Zotero.ZotCard.Consts.cardManagerType.search,
 					id: search.id
@@ -1060,10 +1064,10 @@ Zotero.ZotCard = Object.assign(Zotero.ZotCard, {
 		let items;
 		let type;
 		let id;
-		switch (Zotero.getMainWindow().ZoteroPane.getCollectionTreeRow().type) {
+		switch (Zotero.ZotCard.Zoteros.getCollectionTreeRow()?.type) {
 			case 'library':
 			case 'group':
-				let libraryID = Zotero.getMainWindow().ZoteroPane.getSelectedLibraryID();
+				let libraryID = Zotero.ZotCard.Zoteros.getSelectedLibraryID();
 				items = [{
 					type: Zotero.ZotCard.Consts.cardManagerType.library,
 					id: libraryID
@@ -1072,7 +1076,7 @@ Zotero.ZotCard = Object.assign(Zotero.ZotCard, {
 				id = libraryID;
 				break;
 			case 'collection':
-				let collection = Zotero.getMainWindow().ZoteroPane.getSelectedCollection();
+				let collection = Zotero.ZotCard.Zoteros.getSelectedCollection();
 				items = [{
 					type: Zotero.ZotCard.Consts.cardManagerType.collection,
 					id: collection.id
@@ -1081,7 +1085,7 @@ Zotero.ZotCard = Object.assign(Zotero.ZotCard, {
 				id = collection.id;
 				break;
 			case 'search':
-				let search = Zotero.getMainWindow().ZoteroPane.getSelectedSavedSearch();
+				let search = Zotero.ZotCard.Zoteros.getSelectedSavedSearch();
 				items = [{
 					type: Zotero.ZotCard.Consts.cardManagerType.search,
 					id: search.id
@@ -1099,7 +1103,7 @@ Zotero.ZotCard = Object.assign(Zotero.ZotCard, {
 
 	itemCardManager() {
 		let items = [];
-		let collection = Zotero.getMainWindow().ZoteroPane.getSelectedCollection();
+		let collection = Zotero.ZotCard.Zoteros.getSelectedCollection();
 		let selectedItems = Zotero.ZotCard.Items.getSelectedItems();
 		selectedItems.forEach(item => {
 			if (item.isNote()) {
@@ -1122,7 +1126,7 @@ Zotero.ZotCard = Object.assign(Zotero.ZotCard, {
 
 	itemCardReplace() {
 		let items = [];
-		let collection = Zotero.getMainWindow().ZoteroPane.getSelectedCollection();
+		let collection = Zotero.ZotCard.Zoteros.getSelectedCollection();
 		let selectedItems = Zotero.ZotCard.Items.getSelectedItems();
 		selectedItems.forEach(item => {
 			if (item.isNote()) {
@@ -1145,7 +1149,7 @@ Zotero.ZotCard = Object.assign(Zotero.ZotCard, {
 
 	itemCardViewer() {
 		let items = [];
-		let collection = Zotero.getMainWindow().ZoteroPane.getSelectedCollection();
+		let collection = Zotero.ZotCard.Zoteros.getSelectedCollection();
 		let selectedItems = Zotero.ZotCard.Items.getSelectedItems();
 		selectedItems.forEach(item => {
 			if (item.isNote()) {
@@ -1168,7 +1172,7 @@ Zotero.ZotCard = Object.assign(Zotero.ZotCard, {
 
 	itemCardImageCompression() {
 		let items = [];
-		let collection = Zotero.getMainWindow().ZoteroPane.getSelectedCollection();
+		let collection = Zotero.ZotCard.Zoteros.getSelectedCollection();
 		let selectedItems = Zotero.ZotCard.Items.getSelectedItems();
 		selectedItems.forEach(item => {
 			if (item.isNote()) {
@@ -1445,7 +1449,7 @@ Zotero.ZotCard = Object.assign(Zotero.ZotCard, {
 		}
 
 		let items = Zotero.Items.keepTopLevel(Zotero.getMainWindow().ZoteroPane.getSelectedItems());
-		let collections = Zotero.Collections.getByLibrary(Zotero.getMainWindow().ZoteroPane.getSelectedLibraryID());
+		let collections = Zotero.Collections.getByLibrary(Zotero.ZotCard.Zoteros.getSelectedLibraryID());
 		for (let col of collections) {
 			let menuItem = Zotero.Utilities.Internal.createMenuForTarget(
 				col,
@@ -1501,7 +1505,7 @@ Zotero.ZotCard = Object.assign(Zotero.ZotCard, {
 					},
 					parent: recentlyPopup
 				});
-				menuitem.disabled = Zotero.getMainWindow().ZoteroPane.getSelectedCollection()?.id === collectionid;
+				menuitem.disabled = Zotero.ZotCard.Zoteros.getSelectedCollection()?.id === collectionid;
 				menuitem.setAttribute('label', Zotero.ZotCard.Collections.showPath(collectionid));
 				// let menuitem = Zotero.getMainWindow().document.createXULElement('menuitem');
 				// menuitem.setAttribute('id', );
